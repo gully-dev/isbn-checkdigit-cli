@@ -1,0 +1,6 @@
+[package]
+name = "checkdigit"
+version = "0.1.0"
+edition = "2021"
+description = "Check digit calculation and validation for ISBN-10, ISBN-13, UPC-A, EAN-8 and EAN-13"
+license = "MIT"
