@@ -48,12 +48,22 @@ $ cargo run -- check-digit 978030640615
 
 $ cargo run -- check-digit 012345678
 0123456789
+
+$ cargo run -- batch < codes.txt
+978-0-306-40615-7: valid
+0-13-468599-8: invalid
+036000291459: invalid
 ```
 
 `validate` picks the algorithm from the cleaned length of the input (10
 digits for ISBN-10, 8/12/13/14 for the GS1-based formats). Hyphens and
 whitespace are stripped before that check, so codes can be pasted in as
 printed on the book or package.
+
+`batch` runs the same check over a whole list of codes, one per line, read
+from a file if given (`checkdigit batch codes.txt`) or from stdin otherwise.
+Blank lines and lines starting with `#` are skipped. It exits successfully
+only if every code in the list was valid.
 
 ## Building
 
